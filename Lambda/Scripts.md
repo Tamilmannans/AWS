@@ -1,4 +1,10 @@
+### Using Environment Variables
 
+import os
+
+def lambda_handler(event, context):
+    print("Dynamic Envir : " + os.environ['AWS_REGION'])
+    print("Local Envir : " + os.environ['<DeclaredVariable>'])
 
 ### Stop Instances
 ```py
