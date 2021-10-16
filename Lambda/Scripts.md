@@ -1,4 +1,11 @@
+### Environment Variable
 
+```py
+import os
+    print("Dynamic Envir : " + os.environ['AWS_REGION'])
+    print("Local Envir : " + os.environ['AWSAccount'])
+
+```
 
 ### Stop Instances
 ```py
