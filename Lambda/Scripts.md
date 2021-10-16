@@ -1,3 +1,4 @@
+# AWS CLI 
 ### AWS CLI Check
 ```
 	aws --version
@@ -20,7 +21,7 @@
 	aws lambda invoke --function-name helloworldpython --cli-binary-format raw-in-base64-out --payload '{"key1": "Tamil", "key2": "Rams", "key3": "Ravi"}' --invocation-type Event response.json  
 ```
 
-### Environment Variable
+# Environment Variable
 
 ```py
 import os
@@ -29,37 +30,10 @@ import os
 
 ```
 
-### Stop Instances
-```py
-import boto3
-region = 'us-east-2'
-instances = ['i-09f3821f6364be34f', 'i-045f002a249573ed8']
-ec2 = boto3.client('ec2', region_name=region)
 
-def lambda_handler(event, context):
-    ec2.stop_instances(InstanceIds=instances)
-    print('stopped your instances: ' + str(instances))
+# Lambda & EC2 
 
-```
-### Start Instances
-
-```py
-import boto3
-region = 'us-east-2'
-instances = ['i-0435b7ec51de5d697', 'i-0435b7ec51de5d697']
-ec2 = boto3.client('ec2', region_name=region)
-
-def lambda_handler(event, context):
-    ec2.start_instances(InstanceIds=instances)
-    print('started your instances: ' + str(instances))
-    
- ```
-
-
-
-
-
-# Create EC2 Instance
+### Create EC2 Instance
 ```py
 mport boto3
  
@@ -90,8 +64,35 @@ def lambda_handler(event, context):
     return instance_id
  ```
  
+### Start EC2 Instances
+
+```py
+import boto3
+region = 'us-east-2'
+instances = ['i-0435b7ec51de5d697', 'i-0435b7ec51de5d697']
+ec2 = boto3.client('ec2', region_name=region)
+
+def lambda_handler(event, context):
+    ec2.start_instances(InstanceIds=instances)
+    print('started your instances: ' + str(instances))
+    
+ ```
  
- ## Simple hello world - adding two numbers
+### Stop EC2 Instances
+```py
+import boto3
+region = 'us-east-2'
+instances = ['i-09f3821f6364be34f', 'i-045f002a249573ed8']
+ec2 = boto3.client('ec2', region_name=region)
+
+def lambda_handler(event, context):
+    ec2.stop_instances(InstanceIds=instances)
+    print('stopped your instances: ' + str(instances))
+
+```
+ 
+ # Simple Function
+ ## hello world - adding two numbers
  ```py
  
  from __future__ import division
