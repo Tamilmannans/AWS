@@ -1,3 +1,25 @@
+### AWS CLI Check
+```
+	aws --version
+	aws lambda list-functions
+```
+
+### AWS CLI Synchronous call 
+```
+    #Call function
+    aws lambda invoke --function-name helloworldpython --cli-binary-format raw-in-base64-out --payload '{"key1": "Tamil", "key2": "Rams", "key3": "Ravi"}' response.json  
+    
+    #Print response of the function
+    cat response.json
+```
+
+
+### AWS CLI Asynchronous call 
+```
+	#Call function
+	aws lambda invoke --function-name helloworldpython --cli-binary-format raw-in-base64-out --payload '{"key1": "Tamil", "key2": "Rams", "key3": "Ravi"}' --invocation-type Event response.json  
+```
+
 ### Environment Variable
 
 ```py
